@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "./components/Navbar";
+
 import styled, { keyframes } from "styled-components";
 import Image from "next/image";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 const PhotoBackground = styled.div`
   background-color: antiquewhite;
@@ -9,53 +10,40 @@ const PhotoBackground = styled.div`
   overflow: hidden;
 `;
 
-
-const cursor=keyframes`
+const cursor = keyframes`
   50%{border-left:transparent}
-`
+`;
 
-const cursorMove=keyframes`
+const cursorMove = keyframes`
+60%{left:100%};
  100%{left:0}
-`
-const slide=keyframes`
+`;
+const slide = keyframes`
  100%{transform:translate(0,-100%)}
-`
+`;
 
-
-const ChangingText=styled.div`
+const ChangingText = styled.div`
   display: inline-flex;
   flex-direction: column;
   margin-left: 10px;
+  animation: ${slide} 6s steps(3) infinite;
+`;
 
-animation: ${slide} 3s steps(3)  infinite;
-
-`
-
-
-const ChangingTextConatiner=styled.div`
-
-position: relative;
-display: inline-block;
-height: 30px;
-
-overflow:hidden;
-&::after{
+const ChangingTextConatiner = styled.div`
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  &::after {
     content: "";
     position: absolute;
     left: 100%;
     height: 100%;
     width: 100%;
     border-left: 2px solid white;
-    background-color:#162936;
-    animation: ${cursorMove} 1s steps(10)  infinite, ${cursor} 1s  infinite;
-  
+    background-color: #162936;
+    animation: ${cursorMove} 2s steps(10) infinite, ${cursor} 1s infinite;
   }
-
-
-
-
-`
-
+`;
 
 const Index = () => {
   //states
@@ -78,6 +66,8 @@ const Index = () => {
 
   return (
     <>
+      {/* part 1 */}
+
       {/* Hero section */}
       <section class="h-screen w-2/2">
         <div className="grid grid-cols-3  ">
@@ -93,30 +83,27 @@ const Index = () => {
             {/* <Image className="absolute top-56" src="/sprinkles2.png" alt="sprinkels" height={200} width={200}/> */}
             {/* text container */}
             <div className="flex flex-col  text-7xl text-primary-yellow  ">
-            
-            <div>
-              <p>
-                <span>I</span>
-                <span className="text-primary-red">'</span>
-                <span>M</span>
-              </p>
-              <p>
-                <span>SHAON</span>
-              </p>
-            </div>
+              <div>
+                <p>
+                  <span>I</span>
+                  <span className="text-primary-red">'</span>
+                  <span>M</span>
+                </p>
+                <p>
+                  <span>SHAON</span>
+                </p>
+              </div>
 
               <div className=" text-4xl" overflow-hidden>
-              A PASSIONATE
-            <ChangingTextConatiner>
-            <ChangingText> 
-          <div>REACT</div>
-          <div>NODE </div>
-          <div> MERN</div> 
-          </ChangingText>
-            </ChangingTextConatiner>
-         
-              <span className="m-2">DEVELOPER</span>
-                
+                A PASSIONATE
+                <ChangingTextConatiner className="h-7">
+                  <ChangingText className="text-primary-red font-semibold">
+                    <div>REACT</div>
+                    <div>NODE </div>
+                    <div> MERN</div>
+                  </ChangingText>
+                </ChangingTextConatiner>
+                <span className="m-2">DEVELOPER</span>
               </div>
 
               <p className=" text-lg">
@@ -125,8 +112,6 @@ const Index = () => {
                 a testament to the full-stack journey — from concept to
                 deployment. <br />
               </p>
-
-            
             </div>
           </div>
 
@@ -172,6 +157,40 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* part 2 */}
+
+      <section>
+  <Parallax pages={2} style={{
+        backgroundImage: `url("background.jpg")`,
+        backgroundSize: "cover",
+       
+      }}>
+    <ParallaxLayer
+      speed={3}
+      factor={1}
+      style={{
+        backgroundImage: `url("background1.jpg")`,
+        backgroundSize: "cover",
+       
+      }}
+    >
+      hello world
+    </ParallaxLayer>
+    <ParallaxLayer
+      offset={1}
+      speed={0.5}
+      factor={1}
+      style={{
+        backgroundImage: `url("background2.jpg")`,
+        backgroundSize: "cover",
+   
+      }}
+    >
+      bye world
+    </ParallaxLayer>
+  </Parallax>
+</section>
     </>
   );
 };
