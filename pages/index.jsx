@@ -3,9 +3,9 @@ import React, { useEffect, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import Image from "next/image";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import ServiceShowCase from "./components/Projects/ServiceShowCase";
-import { red } from "@mui/material/colors";
-import Button from "@mui/material/Button";
+import ServiceShowCase from "./components/utilities/ServiceShowCase";
+import ProjectShowcase from "./components/utilities/ProjectsShowcase";
+import Skills from "./components/utilities/Skills";
 
 const PhotoBackground = styled.div`
   background-color: antiquewhite;
@@ -66,6 +66,15 @@ const Index = () => {
     }, 300);
   }, [lightOn]);
   //handler functions
+
+  const skills = [
+    { name: "Javascript", percent: 80 },
+    { name: "node", percent: 70 },
+    { name: "react", percent: 80 },
+    { name: "next js", percent: 75 },
+    { name: "html&css", percent: 85 },
+    { name: "Tailwind", percent: 80 },
+  ];
 
   return (
     <div style={{ background: "url(main.svg)" }}>
@@ -164,31 +173,79 @@ const Index = () => {
       {/* part 2 */}
 
       <section className="h-screen">
-        <Parallax pages={2}>
-          <ParallaxLayer
-            offset={0}
-            speed={0}
-            style={{
-              backgroundImage: `url("background1.jpg")`,
-              backgroundSize: "cover",
-              width: "100%",
-              height: "100vh",
-            }}
-          >
-            {/* Content of the first layer here, if any */}
+        <Parallax pages={4}>
+          <ParallaxLayer offset={0} speed={1}></ParallaxLayer>
+
+          {/* ABOUT */}
+          <ParallaxLayer offset={0} speed={1}>
+            <div className="flex flex-col items-center h-screen p-8 ">
+              <p className="text-2xl font-bold text-white ">ABOUT</p>
+            </div>
+          </ParallaxLayer>
+
+          <ParallaxLayer offset={1} speed={0}>
+            <div className="flex flex-col items-center  ">
+              <p className="  text-5xl font-bold text-white my-2">
+                PROFESSIONAL
+              </p>
+              <p className=" text-xl  text-white ">
+                {" "}
+                MY KNOWLEDGE LEVEL IN SOFTWARE
+              </p>
+            </div>
+          </ParallaxLayer>
+
+          <ParallaxLayer offset={1} speed={1}>
+            <div className="w-full flex flex-col items-start">
+              <div className=" h-screen w-[70%] m-auto">
+                {skills.map((data, idx) => (
+                  <Skills
+                    name={data.name}
+                    percent={data.percent}
+                    key={idx + data.name}
+                  />
+                ))}
+              </div>
+            </div>
+          </ParallaxLayer>
+
+          <ParallaxLayer offset={2} speed={1}>
+            <div className="flex justify-center">
+              <p className="  text-4xl font-bold text-white mt-4">Projects</p>
+            </div>
+          </ParallaxLayer>
+
+          <ParallaxLayer offset={2} speed={3}>
+            <div className="grid grid-cols-3 w-[100%] h-screen items-center justify-center ">
+              <ProjectShowcase />
+              <ProjectShowcase />
+              <ProjectShowcase />
+            </div>
+
+            <div className="grid grid-cols-3 w-[100%] h-screen items-center justify-center ">
+              <ProjectShowcase />
+              <ProjectShowcase />
+              <ProjectShowcase />
+            </div>
+          </ParallaxLayer>
+
+          <ParallaxLayer offset={3} speed={5}>
+            <div className="flex justify-center">
+              <p className="  text-4xl font-bold text-white mt-4">Services</p>
+            </div>
           </ParallaxLayer>
 
           <ParallaxLayer
-            offset={1}
-            speed={2}
+            offset={3}
+            speed={5}
             className="flex items-center justify-center "
           >
             <ServiceShowCase height={"400px"} x={"-90%"} y={"0px"} />
           </ParallaxLayer>
 
           <ParallaxLayer
-            offset={1}
-            speed={5}
+            offset={3}
+            speed={2}
             className="flex items-center justify-center z-10"
           >
             <ServiceShowCase
@@ -199,8 +256,8 @@ const Index = () => {
             />
           </ParallaxLayer>
           <ParallaxLayer
-            offset={1}
-            speed={2}
+            offset={3}
+            speed={5}
             className="flex items-center justify-center"
           >
             <ServiceShowCase
@@ -209,12 +266,6 @@ const Index = () => {
               y={"0px"}
               margin={"600px"}
             />
-          </ParallaxLayer>
-
-          <ParallaxLayer offset={1} speed={2} style={{ position: "relative" }}>
-            <div className="flex justify-center">
-              <p className="  text-4xl font-bold text-white mt-4">Services</p>
-            </div>
           </ParallaxLayer>
         </Parallax>
       </section>
