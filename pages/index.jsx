@@ -3,6 +3,9 @@ import React, { useEffect, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import Image from "next/image";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import ServiceShowCase from "./components/Projects/ServiceShowCase";
+import { red } from "@mui/material/colors";
+import Button from "@mui/material/Button";
 
 const PhotoBackground = styled.div`
   background-color: antiquewhite;
@@ -65,14 +68,14 @@ const Index = () => {
   //handler functions
 
   return (
-    <>
+    <div style={{ background: "url(main.svg)" }}>
       {/* part 1 */}
 
       {/* Hero section */}
-      <section class="h-screen w-2/2">
+      <section class="h-screen w-2/2  ">
         <div className="grid grid-cols-3  ">
           {/* flex  left section*/}
-          <div className="flex bg-primary-blue col-span-2 items-center justify-center relative">
+          <div className="flex col-span-2 items-center justify-center relative">
             <Image
               className="absolute top-40"
               src="/sprinkles1.png"
@@ -116,7 +119,7 @@ const Index = () => {
           </div>
 
           {/* flex  right section*/}
-          <div className="flex    relative justify-end  bg-primary-blue overflow-hidden py-4">
+          <div className="flex    relative justify-end  overflow-hidden py-4">
             {/* light
             <div class="flex  items-center flex-col w-6 absolute left-8 bg-slate-400 z-10">
               <div
@@ -149,9 +152,9 @@ const Index = () => {
                 class={`w1/2 filter transition-all duration-300   brightness-75 z-30   `}
                 src="/hero1.png"
                 alt="Hero"
-                height={400}
-                width={400}
-                style={{ height: "100vh" }}
+                height={300}
+                width={350}
+                style={{ height: "90vh", widt: "auto" }}
               />
             </PhotoBackground>
           </div>
@@ -160,38 +163,62 @@ const Index = () => {
 
       {/* part 2 */}
 
-      <section>
-  <Parallax pages={2} style={{
-        backgroundImage: `url("background.jpg")`,
-        backgroundSize: "cover",
-       
-      }}>
-    <ParallaxLayer
-      speed={3}
-      factor={1}
-      style={{
-        backgroundImage: `url("background1.jpg")`,
-        backgroundSize: "cover",
-       
-      }}
-    >
-      hello world
-    </ParallaxLayer>
-    <ParallaxLayer
-      offset={1}
-      speed={0.5}
-      factor={1}
-      style={{
-        backgroundImage: `url("background2.jpg")`,
-        backgroundSize: "cover",
-   
-      }}
-    >
-      bye world
-    </ParallaxLayer>
-  </Parallax>
-</section>
-    </>
+      <section className="h-screen">
+        <Parallax pages={2}>
+          <ParallaxLayer
+            offset={0}
+            speed={0}
+            style={{
+              backgroundImage: `url("background1.jpg")`,
+              backgroundSize: "cover",
+              width: "100%",
+              height: "100vh",
+            }}
+          >
+            {/* Content of the first layer here, if any */}
+          </ParallaxLayer>
+
+          <ParallaxLayer
+            offset={1}
+            speed={2}
+            className="flex items-center justify-center "
+          >
+            <ServiceShowCase height={"400px"} x={"-90%"} y={"0px"} />
+          </ParallaxLayer>
+
+          <ParallaxLayer
+            offset={1}
+            speed={5}
+            className="flex items-center justify-center z-10"
+          >
+            <ServiceShowCase
+              height={"420px"}
+              x={"-0px"}
+              y={"0px"}
+              margin={"300px"}
+            />
+          </ParallaxLayer>
+          <ParallaxLayer
+            offset={1}
+            speed={2}
+            className="flex items-center justify-center"
+          >
+            <ServiceShowCase
+              height={"400px"}
+              x={"90%"}
+              y={"0px"}
+              margin={"600px"}
+            />
+          </ParallaxLayer>
+
+          <ParallaxLayer offset={1} speed={2} style={{ position: "relative" }}>
+            <div className="flex justify-center">
+              <p className="  text-4xl font-bold text-white mt-4">Services</p>
+            </div>
+          </ParallaxLayer>
+        </Parallax>
+      </section>
+    </div>
   );
 };
 
