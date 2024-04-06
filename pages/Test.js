@@ -2,15 +2,9 @@ import React from "react";
 
 const test = ({ skill, percent }) => {
   return (
-    <div className="flex flex-col items-start h-5">
-      <div className="flex items-center h-4  w-full">
-        <p className="mr-4 text-md uppercase">react</p>
-        <div
-          style={{ height: "1rem", width: "80%", backgroundColor: "green" }}
-        ></div>
-        <p className="text-md uppercase">80%</p>
-      </div>
-    </div>
+    <div className="h-16 w-16 bg-gray-500 flex justify-center items-center text-4xl text-white" style={{ borderRadius: "50px", boxShadow: "5px 0px 0px yellow", display: "flex", alignItems: "center", justifyContent: "center", lineHeight: "0" }}>
+<p className=" translate-y-1">S</p><p className="text-sm translate-y-2 ">haon</p>
+</div>
   );
 };
 
