@@ -7,6 +7,7 @@ import ServiceShowCase from "./components/utilities/ServiceShowCase";
 import ProjectShowcase from "./components/utilities/ProjectsShowcase";
 import Skills from "./components/utilities/Skills";
 import Logo from "./components/utilities/Logo";
+import Footer from "./components/Footer";
 
 const PhotoBackground = styled.div`
   background-color: antiquewhite;
@@ -307,8 +308,27 @@ const Index = () => {
               margin={"600px"}
             />
           </ParallaxLayer>
+
+
+
+
+{/* footer */}
+
+<ParallaxLayer
+            offset={3}
+            speed={7}
+            className="mt-4"
+          >
+            
+          </ParallaxLayer>
+
         </Parallax>
       </section>
+
+      <footer>
+  <Footer/>
+</footer>
+
     </div>
   );
 };
