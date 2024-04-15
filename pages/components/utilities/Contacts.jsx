@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react'
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
-
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-const test = () => {
+
+const Contacts = () => {
   return (
-    <div>
-      <div className="grid grid-cols-2 h-screen items-center  bg-primary-blue">
+    <>
+    <div className="grid grid-cols-2 h-screen items-center  bg-primary-blue">
         <div className=" flex flex-col items-center justify-between h-[60%]">
           {/* part 1 */}
           <div className=" bg-primary-gray p-4 w-[60%]">
@@ -76,8 +76,8 @@ const test = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
-};
+    </>
+  )
+}
 
-export default test;
+export default Contacts

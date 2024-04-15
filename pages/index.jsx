@@ -9,6 +9,9 @@ import Skills from "./components/utilities/Skills";
 import Logo from "./components/utilities/Logo";
 import Footer from "./components/Footer";
 
+import LocalPostOfficeTwoToneIcon from "@mui/icons-material/LocalPostOfficeTwoTone";
+import Contacts from "./components/utilities/Contacts";
+
 const PhotoBackground = styled.div`
   background-color: antiquewhite;
   border-radius: 49% 51% 58% 44% / 66% 41% 75% 34%;
@@ -97,11 +100,10 @@ const Index = () => {
             {/* <Image className="absolute top-56" src="/sprinkles2.png" alt="sprinkels" height={200} width={200}/> */}
             {/* text container */}
             <div className="flex flex-col  text-7xl text-primary-yellow  ">
-
               <div>
                 <p>
                   <span>I</span>
-                  <span className="text-primary-red">'</span>
+                  <span className="text-primary-red">{"'"}</span>
                   <span>M</span>
                 </p>
                 <p>
@@ -129,14 +131,14 @@ const Index = () => {
               </p>
 
               <div>
-              <button className="bg-primary-green  py-2  px-4 text-lg mr-6 hover:text-primary-blue hover:-translate-y-0.5 hover:-translate-x-0.5 transition-all hover:shadow-glow">Download CV</button>
-              <button className="bg-primary-red py-2  px-4 text-lg mr-4 hover:text-primary-blue hover:-translate-y-0 hover:-translate-x-0.5 transition-all hover:shadow-glow">Let's Talk</button>
-              
+                <button className="bg-primary-green  py-2  px-4 text-lg mr-6 hover:text-primary-blue hover:-translate-y-0.5 hover:-translate-x-0.5 transition-all hover:shadow-glow">
+                  Download CV
+                </button>
+                <button className="bg-primary-red py-2  px-4 text-lg mr-4 hover:text-primary-blue hover:-translate-y-0 hover:-translate-x-0.5 transition-all hover:shadow-glow">
+                  {"Let's Talk"}
+                </button>
               </div>
-             
-
             </div>
-            
           </div>
 
           {/* flex  right section*/}
@@ -185,17 +187,17 @@ const Index = () => {
       {/* part 2 */}
 
       <section className="h-screen">
-        <Parallax pages={4}>
+        <Parallax pages={5}>
           {/* ABOUT */}
           <ParallaxLayer offset={0} speed={1}>
             <div className="flex flex-col items-center h-screen p-8 ">
               <p className="text-5xl font-bold text-white  mb-6">ABOUT</p>
 
-
-             
-              <div className="flex flex-col items-center  h-[400px]  w-[60%]  p-4" style={{background:" rgba(255, 255, 255, 0.6)" , }}>
-
-              <Logo size={"66px"}/>
+              <div
+                className="flex flex-col items-center  h-[400px]  w-[60%]  p-4"
+                style={{ background: " rgba(255, 255, 255, 0.6)" }}
+              >
+                <Logo size={"66px"} />
                 <p className="text-xl font-semibold tracking-wide  mt-10 m-auto w-[90%] text-center ">
                   As a certified MERN developer with a passion for the field, I
                   am in search of a position that not only lets me further
@@ -204,27 +206,22 @@ const Index = () => {
                   environment that fosters growth and development in React,
                   enabling me to thrive as a developer.
                 </p>
-              
+
                 <Button
-          variant="contained"
-
-          style={{
-            color: "#FBE094",
-            backgroundColor: "#162936",
-        transform:"translateY(-100%)"
-          }}
-          
-        >
-          GITHUB
-          
-        </Button>
-              
+                  variant="contained"
+                  style={{
+                    color: "#FBE094",
+                    backgroundColor: "#162936",
+                    transform: "translateY(-100%)",
+                  }}
+                >
+                  GITHUB
+                </Button>
               </div>
-
             </div>
           </ParallaxLayer>
 
-          <ParallaxLayer offset={1} speed={0}>
+          <ParallaxLayer offset={1} speed={1}>
             <div className="flex flex-col items-center  ">
               <p className="  text-5xl font-bold text-white my-2">
                 PROFESSIONAL
@@ -236,7 +233,7 @@ const Index = () => {
             </div>
           </ParallaxLayer>
 
-          <ParallaxLayer offset={1} speed={3}>
+          <ParallaxLayer offset={1} speed={2} className="pt-24">
             <div className="w-full flex flex-col items-start">
               <div className=" h-screen w-[70%] m-auto">
                 {skills.map((data, idx) => (
@@ -309,26 +306,17 @@ const Index = () => {
             />
           </ParallaxLayer>
 
-
-
-
-{/* footer */}
-
-<ParallaxLayer
-            offset={3}
-            speed={7}
-            className="mt-4"
-          >
-            
+          {/* contacts */}
+          <ParallaxLayer offset={4} speed={3} className="mt-4">
+            <Contacts />
           </ParallaxLayer>
-
         </Parallax>
       </section>
 
+      {/* footer */}
       <footer>
-  <Footer/>
-</footer>
-
+        <Footer />
+      </footer>
     </div>
   );
 };
