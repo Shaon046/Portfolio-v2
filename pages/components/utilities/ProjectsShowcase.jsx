@@ -4,10 +4,10 @@ import Image from "next/image";
 
 const ProjectShowcase = () => {
   return (
-    <div className="h-[400px] w-[300px] py-4 bg-white rounded-lg shadow-glow transition-all duration-500 hover:-translate-x-1 hover:-translate-y-1 m-auto  ">
+    <div className="xs:h-[350px] sm:h-[400px] w-[300px] py-4 bg-white rounded-lg shadow-glow transition-all duration-500 hover:-translate-x-1 hover:-translate-y-1 m-auto  mb-12">
       <div className="h-[70%]  w-[90%] m-auto bg-red-600 rounded-lg"></div>
 
-      <div className=" ml-2 mt-4 flex justify-center">
+      <div className=" md:ml-2 mt-4 flex justify-center">
         <p className="text-2xl text-bold font-semibold text-primary-blue">
           FLIPKART
         </p>

@@ -16,7 +16,7 @@ const Navbar = () => {
 
    {/* Right Container */}
    <div class='flex px-8 justify-end items-center  w-1/2'>
-   <ul class="flex space-x-4 text-xl text-primary-yellow">
+   <ul class="flex space-x-4 xs:text-sm sm-text-sm md:text-xl text-primary-yellow">
     <li className=' cursor-pointer '>About</li>
     <li className=' cursor-pointer '>Projects</li>
     <li className=' cursor-pointer '>Contacts</li>

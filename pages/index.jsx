@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 
 import LocalPostOfficeTwoToneIcon from "@mui/icons-material/LocalPostOfficeTwoTone";
 import Contacts from "./components/utilities/Contacts";
+import About from "./components/About";
 
 const PhotoBackground = styled.div`
   background-color: antiquewhite;
@@ -33,7 +34,7 @@ const slide = keyframes`
 const ChangingText = styled.div`
   display: inline-flex;
   flex-direction: column;
-  margin-left: 10px;
+  margin-left: 5px;
   animation: ${slide} 6s steps(3) infinite;
 `;
 
@@ -86,18 +87,10 @@ const Index = () => {
       {/* part 1 */}
 
       {/* Hero section */}
-      <section class="h-screen w-2/2  ">
-        <div className="grid grid-cols-3  ">
+      <section class="xs:p-4 sm-p-4 md:p-0">
+        <div className="grid  sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:rid-cols-3 2xl:rid-cols-3 items-center ">
           {/* flex  left section*/}
-          <div className="flex col-span-2 items-center justify-center relative">
-            <Image
-              className="absolute top-40"
-              src="/sprinkles1.png"
-              alt="sprinkels"
-              height={150}
-              width={100}
-            />
-            {/* <Image className="absolute top-56" src="/sprinkles2.png" alt="sprinkels" height={200} width={200}/> */}
+          <div className="flex xs:mt-10 sm:mt-10 md:mt-0 md:col-span-2 lg:col-span-2 xl:col-span-2 2xl:col-span-2  items-center justify-center relative ">
             {/* text container */}
             <div className="flex flex-col  text-7xl text-primary-yellow  ">
               <div>
@@ -120,7 +113,7 @@ const Index = () => {
                     <div> MERN</div>
                   </ChangingText>
                 </ChangingTextConatiner>
-                <span className="m-2">DEVELOPER</span>
+                <span className="">DEVELOPER</span>
               </div>
 
               <p className=" text-lg">
@@ -142,7 +135,7 @@ const Index = () => {
           </div>
 
           {/* flex  right section*/}
-          <div className="flex    relative justify-end  overflow-hidden py-4">
+          <div className="flex  relative justify-center xs:mt-10 sm:mt-10 md:mt-0  overflow-hidden py-4 ">
             {/* light
             <div class="flex  items-center flex-col w-6 absolute left-8 bg-slate-400 z-10">
               <div
@@ -177,7 +170,7 @@ const Index = () => {
                 alt="Hero"
                 height={300}
                 width={350}
-                style={{ height: "90vh", widt: "auto" }}
+                style={{ maxHeight: "90vh", width: "auto" }}
               />
             </PhotoBackground>
           </div>
@@ -190,52 +183,24 @@ const Index = () => {
         <Parallax pages={5}>
           {/* ABOUT */}
           <ParallaxLayer offset={0} speed={1}>
-            <div className="flex flex-col items-center h-screen p-8 ">
-              <p className="text-5xl font-bold text-white  mb-6">ABOUT</p>
-
-              <div
-                className="flex flex-col items-center  h-[400px]  w-[60%]  p-4"
-                style={{ background: " rgba(255, 255, 255, 0.6)" }}
-              >
-                <Logo size={"66px"} />
-                <p className="text-xl font-semibold tracking-wide  mt-10 m-auto w-[90%] text-center ">
-                  As a certified MERN developer with a passion for the field, I
-                  am in search of a position that not only lets me further
-                  refine and enhance my web development capabilities but also
-                  delivers high-quality results. I am eager to find an
-                  environment that fosters growth and development in React,
-                  enabling me to thrive as a developer.
-                </p>
-
-                <Button
-                  variant="contained"
-                  style={{
-                    color: "#FBE094",
-                    backgroundColor: "#162936",
-                    transform: "translateY(-100%)",
-                  }}
-                >
-                  GITHUB
-                </Button>
-              </div>
-            </div>
+            <About />
           </ParallaxLayer>
 
-          <ParallaxLayer offset={1} speed={1}>
+          <ParallaxLayer offset={1} speed={0.25}>
             <div className="flex flex-col items-center  ">
-              <p className="  text-5xl font-bold text-white my-2">
+              <p className="xs:text-3xl  md:text-5xl font-bold text-white my-2">
                 PROFESSIONAL
               </p>
-              <p className=" text-xl  text-white ">
+              <p className="xs:lg md:text-xl  text-white text-center">
                 {" "}
                 MY KNOWLEDGE LEVEL IN SOFTWARE
               </p>
             </div>
           </ParallaxLayer>
 
-          <ParallaxLayer offset={1} speed={2} className="pt-24">
+          <ParallaxLayer offset={1} speed={1} className="pt-24">
             <div className="w-full flex flex-col items-start">
-              <div className=" h-screen w-[70%] m-auto">
+              <div className=" h-screen xs:w-[90%] md:w-[70%] m-auto">
                 {skills.map((data, idx) => (
                   <Skills
                     name={data.name}
@@ -247,44 +212,76 @@ const Index = () => {
             </div>
           </ParallaxLayer>
 
-          <ParallaxLayer offset={2} speed={1}>
+
+      {/* PROJECTS */}
+          <ParallaxLayer
+            offset={2}
+            speed={0.5}
+            className="min-h-screen z-20 mb-10 xs:invisible md:visible"
+          >
             <div className="flex justify-center">
               <p className="  text-4xl font-bold text-white mt-4">Projects</p>
             </div>
           </ParallaxLayer>
 
-          <ParallaxLayer offset={2} speed={3}>
-            <div className="grid grid-cols-3 w-[100%] h-screen items-center justify-center ">
+          <ParallaxLayer offset={2} speed={1.5}>
+            <div className="flex justify-center mb-6 xs:visible md:invisible">
+              <p className="  text-4xl font-bold text-white mt-4">Projects</p>
+            </div>
+            <div className="grid xs:grid-cols-1 md:grid-cols-3 w-[100%] items-center justify-center ">
               <ProjectShowcase />
               <ProjectShowcase />
               <ProjectShowcase />
             </div>
 
-            <div className="grid grid-cols-3 w-[100%] h-screen items-center justify-center ">
+            <div className="grid xs:grid-cols-1 md:grid-cols-3 w-[100%]  items-center justify-center ">
               <ProjectShowcase />
               <ProjectShowcase />
               <ProjectShowcase />
-            </div>
-          </ParallaxLayer>
-
-          <ParallaxLayer offset={3} speed={5}>
-            <div className="flex justify-center">
-              <p className="  text-4xl font-bold text-white mt-4">Services</p>
             </div>
           </ParallaxLayer>
 
           <ParallaxLayer
             offset={3}
-            speed={5}
-            className="flex items-center justify-center "
+            speed={0.5}
+            className="xs:invisible md:visible "
+          >
+            <div className="flex justify-center min-h-screen">
+              <p className=" xs:text-3xl md:text-5xl font-bold text-white md:mt-4 ">
+                Services
+              </p>
+            </div>
+          </ParallaxLayer>
+
+          {/* Services */}
+
+          {/* Mobile view */}
+          <ParallaxLayer
+            offset={3}
+            speed={4}
+            className="flex flex-col min-h-[100%] items-center justify-center xs:visible md:invisible"
+          >
+            <p className=" xs:text-3xl md:text-5xl font-bold text-white xs:mb-6 md:mt-4 ">
+              Services
+            </p>
+
+            <ServiceShowCase height={"450px"} />
+            <ServiceShowCase height={"450px"} />
+            <ServiceShowCase height={"450px"} />
+          </ParallaxLayer>
+
+          {/* Desktop view */}
+          <ParallaxLayer
+            offset={3}
+            speed={0.5}
+            className="flex items-center justify-center xs:invisible md:visible"
           >
             <ServiceShowCase height={"400px"} x={"-90%"} y={"0px"} />
           </ParallaxLayer>
-
           <ParallaxLayer
             offset={3}
-            speed={2}
-            className="flex items-center justify-center z-10"
+            speed={0.2}
+            className="flex items-center justify-center z-10 xs:invisible md:visible"
           >
             <ServiceShowCase
               height={"420px"}
@@ -295,19 +292,20 @@ const Index = () => {
           </ParallaxLayer>
           <ParallaxLayer
             offset={3}
-            speed={5}
-            className="flex items-center justify-center"
+            speed={0.5}
+            className="flex items-center justify-center xs:invisible md:visible"
           >
             <ServiceShowCase
               height={"400px"}
               x={"90%"}
               y={"0px"}
               margin={"600px"}
+              className=""
             />
           </ParallaxLayer>
 
           {/* contacts */}
-          <ParallaxLayer offset={4} speed={3} className="mt-4">
+          <ParallaxLayer offset={4} speed={1} className="mt-4">
             <Contacts />
           </ParallaxLayer>
         </Parallax>
