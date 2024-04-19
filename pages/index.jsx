@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Button from "@mui/material/Button";
+import Navbar from "./components/Navbar";
 import styled, { keyframes } from "styled-components";
 import Image from "next/image";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
@@ -8,7 +9,7 @@ import ProjectShowcase from "./components/utilities/ProjectsShowcase";
 import Skills from "./components/utilities/Skills";
 import Logo from "./components/utilities/Logo";
 import Footer from "./components/Footer";
-
+import Link from "next/link";
 import LocalPostOfficeTwoToneIcon from "@mui/icons-material/LocalPostOfficeTwoTone";
 import Contacts from "./components/utilities/Contacts";
 import About from "./components/About";
@@ -86,57 +87,70 @@ const Index = () => {
     <div style={{ background: "url(main.svg)" }}>
       {/* part 1 */}
 
-      {/* Hero section */}
-      <section class="xs:p-4 sm-p-4 md:p-0">
-        <div className="grid  sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:rid-cols-3 2xl:rid-cols-3 items-center ">
-          {/* flex  left section*/}
-          <div className="flex xs:mt-10 sm:mt-10 md:mt-0 md:col-span-2 lg:col-span-2 xl:col-span-2 2xl:col-span-2  items-center justify-center relative ">
-            {/* text container */}
-            <div className="flex flex-col  text-7xl text-primary-yellow  ">
-              <div>
-                <p>
-                  <span>I</span>
-                  <span className="text-primary-red">{"'"}</span>
-                  <span>M</span>
-                </p>
-                <p>
-                  <span>SHAON</span>
-                </p>
-              </div>
+      {/* part 2 */}
 
-              <div className=" text-4xl" overflow-hidden>
-                A PASSIONATE
-                <ChangingTextConatiner className="h-7">
-                  <ChangingText className="text-primary-red font-semibold">
-                    <div>REACT</div>
-                    <div>NODE </div>
-                    <div> MERN</div>
-                  </ChangingText>
-                </ChangingTextConatiner>
-                <span className="">DEVELOPER</span>
-              </div>
+      <section className="min-h-screen ">
+        <Parallax pages={6} className="overflow-y-hidden">
+          {/* ABOUT */}
 
-              <p className=" text-lg">
-                Step into my digital domain, where each line of code tells a
-                story of problem-solving and innovation. <br /> My portfolio is
-                a testament to the full-stack journey — from concept to
-                deployment. <br />
-              </p>
+          <ParallaxLayer offset={0} speed={1}>
+            {/* Hero section */}
+            <section class="xs:p-4 sm-p-4 md:p-0">
+              <Navbar />
+              <div className="grid  sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:rid-cols-3 2xl:rid-cols-3 items-center ">
+                {/* flex  left section*/}
+                <div className="flex xs:mt-10 sm:mt-10 md:mt-0 md:col-span-2 lg:col-span-2 xl:col-span-2 2xl:col-span-2  items-center justify-center relative ">
+                  {/* text container */}
+                  <div className="flex flex-col  text-7xl text-primary-yellow  ">
+                    <div>
+                      <p>
+                        <span>I</span>
+                        <span className="text-primary-red">{"'"}</span>
+                        <span>M</span>
+                      </p>
+                      <p>
+                        <span>SHAON</span>
+                      </p>
+                    </div>
 
-              <div>
-                <button className="bg-primary-green  py-2  px-4 text-lg mr-6 hover:text-primary-blue hover:-translate-y-0.5 hover:-translate-x-0.5 transition-all hover:shadow-glow">
-                  Download CV
-                </button>
-                <button className="bg-primary-red py-2  px-4 text-lg mr-4 hover:text-primary-blue hover:-translate-y-0 hover:-translate-x-0.5 transition-all hover:shadow-glow">
-                  {"Let's Talk"}
-                </button>
-              </div>
-            </div>
-          </div>
+                    <div className=" text-4xl" overflow-hidden>
+                      A PASSIONATE
+                      <ChangingTextConatiner className="h-7">
+                        <ChangingText className="text-primary-red font-semibold">
+                          <div>REACT</div>
+                          <div>NODE </div>
+                          <div> MERN</div>
+                        </ChangingText>
+                      </ChangingTextConatiner>
+                      <span className="">DEVELOPER</span>
+                    </div>
 
-          {/* flex  right section*/}
-          <div className="flex  relative justify-center xs:mt-10 sm:mt-10 md:mt-0  overflow-hidden py-4 ">
-            {/* light
+                    <p className=" text-lg">
+                      Step into my digital domain, where each line of code tells
+                      a story of problem-solving and innovation. <br /> My
+                      portfolio is a testament to the full-stack journey — from
+                      concept to deployment. <br />
+                    </p>
+
+                    <div>
+                      <Link href={"resume/Shaon-React_Node.pdf"}>
+                        <button className="bg-primary-green  py-2  px-4 text-lg mr-6 hover:text-primary-blue hover:-translate-y-0.5 hover:-translate-x-0.5 transition-all hover:shadow-glow">
+                          Download CV
+                        </button>
+                      </Link>
+
+                      <a href={"#contact"} scroll={true}>
+                        <button className="bg-primary-red py-2  px-4 text-lg mr-4 hover:text-primary-blue hover:-translate-y-0 hover:-translate-x-0.5 transition-all hover:shadow-glow">
+                          {"Let's Talk"}
+                        </button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* flex  right section*/}
+                <div className="flex  relative justify-center xs:mt-10 sm:mt-10 md:mt-0  overflow-hidden py-4 ">
+                  {/* light
             <div class="flex  items-center flex-col w-6 absolute left-8 bg-slate-400 z-10">
               <div
                 class={`flex   w-0.5 bg-black transition-height duration-300 ease-in-out ${
@@ -163,30 +177,26 @@ const Index = () => {
               </button>
             </div> */}
 
-            <PhotoBackground>
-              <Image
-                class={`w1/2 filter transition-all duration-300   brightness-75 z-30   `}
-                src="/hero1.png"
-                alt="Hero"
-                height={300}
-                width={350}
-                style={{ maxHeight: "90vh", width: "auto" }}
-              />
-            </PhotoBackground>
-          </div>
-        </div>
-      </section>
+                  <PhotoBackground>
+                    <Image
+                      class={`w1/2 filter transition-all duration-300   brightness-75 z-30   `}
+                      src="/hero1.png"
+                      alt="Hero"
+                      height={300}
+                      width={350}
+                      style={{ maxHeight: "90vh", width: "auto" }}
+                    />
+                  </PhotoBackground>
+                </div>
+              </div>
+            </section>
+          </ParallaxLayer>
 
-      {/* part 2 */}
-
-      <section className="h-screen">
-        <Parallax pages={5}>
-          {/* ABOUT */}
-          <ParallaxLayer offset={0} speed={1}>
+          <ParallaxLayer offset={1} speed={1}>
             <About />
           </ParallaxLayer>
 
-          <ParallaxLayer offset={1} speed={0.25}>
+          <ParallaxLayer offset={2} speed={0.25}>
             <div className="flex flex-col items-center  ">
               <p className="xs:text-3xl  md:text-5xl font-bold text-white my-2">
                 PROFESSIONAL
@@ -198,7 +208,7 @@ const Index = () => {
             </div>
           </ParallaxLayer>
 
-          <ParallaxLayer offset={1} speed={1} className="pt-24">
+          <ParallaxLayer offset={2} speed={1} className="pt-24">
             <div className="w-full flex flex-col items-start">
               <div className=" h-screen xs:w-[90%] md:w-[70%] m-auto">
                 {skills.map((data, idx) => (
@@ -212,10 +222,9 @@ const Index = () => {
             </div>
           </ParallaxLayer>
 
-
-      {/* PROJECTS */}
+          {/* PROJECTS */}
           <ParallaxLayer
-            offset={2}
+            offset={3}
             speed={0.5}
             className="min-h-screen z-20 mb-10 xs:invisible md:visible"
           >
@@ -224,7 +233,7 @@ const Index = () => {
             </div>
           </ParallaxLayer>
 
-          <ParallaxLayer offset={2} speed={1.5}>
+          <ParallaxLayer offset={3} speed={1.5}>
             <div className="flex justify-center mb-6 xs:visible md:invisible">
               <p className="  text-4xl font-bold text-white mt-4">Projects</p>
             </div>
@@ -242,7 +251,7 @@ const Index = () => {
           </ParallaxLayer>
 
           <ParallaxLayer
-            offset={3}
+            offset={4}
             speed={0.5}
             className="xs:invisible md:visible "
           >
@@ -257,7 +266,7 @@ const Index = () => {
 
           {/* Mobile view */}
           <ParallaxLayer
-            offset={3}
+            offset={4}
             speed={4}
             className="flex flex-col min-h-[100%] items-center justify-center xs:visible md:invisible"
           >
@@ -272,14 +281,14 @@ const Index = () => {
 
           {/* Desktop view */}
           <ParallaxLayer
-            offset={3}
+            offset={4}
             speed={0.5}
             className="flex items-center justify-center xs:invisible md:visible"
           >
             <ServiceShowCase height={"400px"} x={"-90%"} y={"0px"} />
           </ParallaxLayer>
           <ParallaxLayer
-            offset={3}
+            offset={4}
             speed={0.2}
             className="flex items-center justify-center z-10 xs:invisible md:visible"
           >
@@ -291,7 +300,7 @@ const Index = () => {
             />
           </ParallaxLayer>
           <ParallaxLayer
-            offset={3}
+            offset={4}
             speed={0.5}
             className="flex items-center justify-center xs:invisible md:visible"
           >
@@ -305,16 +314,18 @@ const Index = () => {
           </ParallaxLayer>
 
           {/* contacts */}
-          <ParallaxLayer offset={4} speed={1} className="mt-4">
+          <ParallaxLayer offset={5} speed={1} id="contact" className="  mt-4">
             <Contacts />
+          </ParallaxLayer>
+
+          <ParallaxLayer offset={5} speed={0.5} className="relative h-screen">
+            {/* footer */}
+            <footer className="absolute w-full bottom-0 ">
+              <Footer />
+            </footer>
           </ParallaxLayer>
         </Parallax>
       </section>
-
-      {/* footer */}
-      <footer>
-        <Footer />
-      </footer>
     </div>
   );
 };

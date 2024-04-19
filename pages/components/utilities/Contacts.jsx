@@ -26,7 +26,7 @@ const Contacts = () => {
           </div>
 
           {/* part 2 */}
-          <div className="  bg-primary-gray p-4 mt-4 xs:w-[80%] md:w-[60%]   ">
+          <div className="  bg-primary-gray p-4 mt-4 xs:w-[80%] md:w-[60%]  xs:mb-4 md:mb-0 ">
             <div className=" flex justify-start items-center ">
               <div className=" h-24 w-24 bg-primary-blue flex items-center justify-center">
                 <WhatsAppIcon style={{ fontSize: "50px", color: "white" }} />
@@ -46,7 +46,7 @@ const Contacts = () => {
 
         {/* //part 3 */}
 
-        <div className="bg-primary-gray xs:m-auto md:m-0 md:mr-8  xs:w-[80%] md:w-[80%] ">
+        <div className=" bg-primary-gray xs:m-auto md:m-0 md:mr-8  xs:w-[80%] md:w-[80%] ">
           <div className="flex flex-col p-4 m-4 ">
             <input
               className="max-h-10 mb-4 focus:outline-none p-4 "
