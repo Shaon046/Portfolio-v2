@@ -23,7 +23,9 @@ module.exports = {
       boxShadow: {
         glow: "0 0px 30px  rgb(250 235 215)",
       },
-
+      backgroundImage: {
+        'gradient-card': 'linear-gradient(to top, #ffffff, #faebd7)',
+      },
       colors: {
         "primary-yellow": "#FBE094",
         "primary-blue": "#162936",
