@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Contacts from "./components/utilities/Contacts";
 import About from "./components/About";
 import Hero from "./components/Hero";
+import Certificates from "./components/utilities/Certificates";
 
 const Index = () => {
   //states
@@ -105,7 +106,7 @@ const Index = () => {
   return (
     <div style={{ background: "url(main.svg)" }}>
       <section className="min-h-screen ">
-        <Parallax pages={6} className="overflow-y-hidden">
+        <Parallax pages={7} className="overflow-y-hidden">
           {/* Hero Section */}
           <ParallaxLayer offset={0} speed={1}>
             <Hero />
@@ -223,9 +224,26 @@ const Index = () => {
             </ParallaxLayer>
           ))}
 
-          {/* contacts */}
+          {/*certificate */}
           <ParallaxLayer
             offset={5}
+            speed={0.5}
+            className=" relative mt-4 xs:invisible md:visible"
+          >
+            <div className="flex justify-center mt-8">
+              <p className="text-5xl text-primary-gray font-bold uppercase m-4">
+                Certificates
+              </p>
+            </div>
+          </ParallaxLayer>
+
+          <ParallaxLayer offset={5} speed={1.5} className=" relative mt-4">
+            <Certificates />
+          </ParallaxLayer>
+
+          {/* contacts */}
+          <ParallaxLayer
+            offset={6}
             speed={1}
             id="contact"
             className=" relative mt-4"
