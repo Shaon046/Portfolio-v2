@@ -22,12 +22,12 @@ const ProjectShowcase = ({ image, project, viewLink, gitLink }) => {
       </div>
 
       <div className="flex justify-evenly mt-4">
-        <Link href={viewLink} target="_blank">
+        <Link href={viewLink ?? ""}>
           <Button
             variant="contained"
             style={{
-              backgroundColor: "#162936", // This should match your `primary-blue` color.
-              color: "#FBE094", // This should match your `primary-yellow` color.
+              backgroundColor: "#162936", 
+              color: "#FBE094", 
               display: "flex",
               alignItems: "center",
             }}
@@ -42,7 +42,7 @@ const ProjectShowcase = ({ image, project, viewLink, gitLink }) => {
             />{" "}
           </Button>
         </Link>
-        <Link href={gitLink ?? ''} target="_blank">
+        <Link href={gitLink ?? ''}>
           <Button
             variant="contained"
             style={{
@@ -56,7 +56,7 @@ const ProjectShowcase = ({ image, project, viewLink, gitLink }) => {
             <Image
               className="ml-1"
               src="/gif/git.gif"
-              alt=""
+              alt="git"
               height={20}
               width={20}
             />{" "}

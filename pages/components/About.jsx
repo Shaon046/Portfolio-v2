@@ -23,7 +23,7 @@ const About = () => {
           development in React, enabling me to thrive as a developer.
         </p>
 
-        <Link href="https://github.com/Shaon046" target="_blank">
+        <Link href="https://github.com/Shaon046" >
           <Button
             variant="contained"
             style={{

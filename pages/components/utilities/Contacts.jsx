@@ -91,7 +91,7 @@ const Contacts = () => {
 
                 <Link
                   href="https://wa.me/9366311783"
-                  target="_blank"
+                 
                   rel="noopener noreferrer"
                 >
                   <button className=" transition-all duration-200 hover:text-primary-green">
