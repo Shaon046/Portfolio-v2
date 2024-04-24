@@ -20,6 +20,7 @@ const Contacts = () => {
     let field = eve.target.name;
 
     setFormData((prev) => ({ ...prev, [field]: eve.target.value }));
+    setIsFormValid(true);
   };
 
   const onSendHandler = () => {
@@ -35,14 +36,10 @@ const Contacts = () => {
     }
   };
 
-  useEffect(() => {
-    console.log(formData);
-  }, [formData]);
-
   return (
-    <>
-      <div
-        className="p-5 flex  "
+    <div>
+      {/* <div
+        className="xs:p-1 md:p-5 flex  "
         style={{ visibility: showSucessMessage ? "visible" : "hidden" }}
       >
         <Alert
@@ -53,17 +50,17 @@ const Contacts = () => {
           Thank you for reaching out! I will get back to you soon. Have a great
           day ahead!😌
         </Alert>
-      </div>
+      </div> */}
 
       <div className="grid md:grid-cols-2  items-between xs:justify-center md:justify-normal ">
         <div className=" flex flex-col items-center justify-between ">
           {/* part 1 */}
-          <div className=" bg-primary-gray p-4 w-[60%] xs:mb-4 md:mb-0  xs:w-[80%] md:w-[60%]">
+          <div className=" bg-primary-gray p-4 w-[60%] xs:mb-0 md:mb-0  xs:w-[80%] md:w-[60%]">
             <div className=" flex justify-start items-center ">
-              <div className=" h-24 w-24 bg-primary-blue flex items-center justify-center">
+              <div className=" xs:h-14  xs:w-14  md:h-24 md:w-24 bg-primary-blue flex items-center justify-center">
                 <MailOutlineIcon style={{ fontSize: "50px", color: "white" }} />
               </div>
-              <div className="p-8 ">
+              <div className="xs:p-3 md:p-8 ">
                 <p className=" text-lg font-semibold text-primary-blue  ">
                   {" "}
                   Bshaon19@gmail.com
@@ -80,20 +77,16 @@ const Contacts = () => {
           {/* part 2 */}
           <div className="  bg-primary-gray p-4 mt-4 xs:w-[80%] md:w-[60%]  xs:mb-4 md:mb-0 ">
             <div className=" flex justify-start items-center ">
-              <div className=" h-24 w-24 bg-primary-blue flex items-center justify-center">
+              <div className=" xs:h-14  xs:w-14  md:h-24 md:w-24 bg-primary-blue flex items-center justify-center">
                 <WhatsAppIcon style={{ fontSize: "50px", color: "white" }} />
               </div>
-              <div className="p-8">
+              <div className="xs:p-3 p-8">
                 <p className=" text-lg font-semibold text-primary-blue   ">
                   {" "}
                   WhatsApp
                 </p>
 
-                <Link
-                  href="https://wa.me/9366311783"
-                 
-                  rel="noopener noreferrer"
-                >
+                <Link href="https://wa.me/9366311783" rel="noopener noreferrer">
                   <button className=" transition-all duration-200 hover:text-primary-green">
                     Send a Message
                   </button>
@@ -106,9 +99,9 @@ const Contacts = () => {
         {/* //part 3 */}
 
         <div className=" bg-primary-gray xs:m-auto md:m-0 md:mr-8  xs:w-[80%] md:w-[80%] ">
-          <div className="flex flex-col p-4 m-4 ">
+          <div className="flex flex-col p-4  ">
             <input
-              className="max-h-10 mb-4 focus:outline-none p-4 "
+              className="xs:h-7 md:h-10 mb-4 focus:outline-none p-4 "
               type="text"
               placeholder="Your Name"
               name="name"
@@ -117,7 +110,7 @@ const Contacts = () => {
             />
 
             <input
-              className="max-h-10 mb-4 focus:outline-none p-4 "
+              className="xs:h-7 md:h-10 mb-4 focus:outline-none p-4 "
               type="email"
               placeholder="Your Email"
               name="email"
@@ -126,9 +119,9 @@ const Contacts = () => {
             />
 
             <textarea
-              className=" mb-4 focus:outline-none p-4 "
+              className="xs:1 md:mb-4 focus:outline-none p-4 "
               id="msg"
-              rows="4"
+              rows="3"
               cols="50"
               placeholder="Your Message"
               name="message"
@@ -144,7 +137,7 @@ const Contacts = () => {
             </div>
             <div>
               <button
-                className="max-h-10 w-16 bg-primary-blue text-primary-yellow"
+                className="xs:h-7 md:-h-10 w-16 bg-primary-blue text-primary-yellow"
                 onClick={() => onSendHandler()}
               >
                 Send
@@ -153,7 +146,7 @@ const Contacts = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

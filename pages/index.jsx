@@ -106,7 +106,7 @@ const Index = () => {
   return (
     <div style={{ background: "url(main.svg)" }}>
       <section className="min-h-screen ">
-        <Parallax pages={7} className="overflow-y-hidden">
+        <Parallax pages={7}  >
           {/* Hero Section */}
           <ParallaxLayer offset={0} speed={1}>
             <Hero />
@@ -246,14 +246,23 @@ const Index = () => {
             offset={6}
             speed={1}
             id="contact"
-            className=" relative mt-4"
+            className="relative " 
           >
+
+
+
+
             <Contacts />
+            
             <footer className="absolute w-full bottom-0 ">
               <Footer />
             </footer>
           </ParallaxLayer>
         </Parallax>
+
+
+
+        
       </section>
     </div>
   );
