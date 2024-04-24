@@ -49,7 +49,7 @@ const PhotoBackground = styled.div`
 
 const Hero = () => {
   return (
-    <section class="xs:p-4 sm-p-4 md:p-0">
+    <section className="xs:p-4 sm-p-4 md:p-0">
       <Navbar />
       <div className="grid  sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:rid-cols-3 2xl:rid-cols-3 items-center ">
         {/* flex  left section*/}
@@ -67,7 +67,7 @@ const Hero = () => {
               </p>
             </div>
 
-            <div className=" text-4xl" overflow-hidden>
+            <div className=" text-4xl  overflow-hidden">
               A PASSIONATE
               <ChangingTextConatiner className="h-7">
                 <ChangingText className="text-primary-red font-semibold">
@@ -93,7 +93,7 @@ const Hero = () => {
                 </button>
               </Link>
 
-              <a href={"#contact"} scroll={true}>
+              <a href={"#contact"} >
                 <button className="bg-primary-red py-2  px-4 text-lg mr-4 hover:text-primary-blue hover:-translate-y-0 hover:-translate-x-0.5 transition-all hover:shadow-glow">
                   {"Let's Talk"}
                 </button>
@@ -105,14 +105,14 @@ const Hero = () => {
         {/* flex  right section*/}
         <div className="flex  relative justify-center xs:mt-10 sm:mt-10 md:mt-0  overflow-hidden py-4 ">
           {/* light
-    <div class="flex  items-center flex-col w-6 absolute left-8 bg-slate-400 z-10">
+    <div className="flex  items-center flex-col w-6 absolute left-8 bg-slate-400 z-10">
       <div
-        class={`flex   w-0.5 bg-black transition-height duration-300 ease-in-out ${
+        className={`flex   w-0.5 bg-black transition-height duration-300 ease-in-out ${
           expand ? "h-28" : "h-24"
         }`}
       />
       <button
-        class="-translate-y-0.5"
+        className="-translate-y-0.5"
         onClick={() => {
           onLightHandler();
         }}
@@ -133,7 +133,7 @@ const Hero = () => {
 
           <PhotoBackground>
             <Image
-              class={`w1/2 filter transition-all duration-300   brightness-75 z-30   `}
+              className={`w1/2 filter transition-all duration-300   brightness-75 z-30   `}
               src="/hero1.png"
               alt="Hero"
               height={300}

@@ -42,7 +42,7 @@ const Certificates = () => {
         showStatus={false}
         infiniteLoop={true}
         autoPlay={true}
-        showThumbs={true}
+        showThumbs={false}
         useKeyboardArrows={true}
         swipeable={true}
       >
