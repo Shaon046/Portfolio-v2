@@ -42,7 +42,7 @@ const ProjectShowcase = ({ image, project, viewLink, gitLink }) => {
             />{" "}
           </Button>
         </Link>
-        <Link href={gitLink} target="_blank">
+        <Link href={gitLink ?? ''} target="_blank">
           <Button
             variant="contained"
             style={{
