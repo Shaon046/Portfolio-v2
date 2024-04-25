@@ -47,10 +47,10 @@ const PhotoBackground = styled.div`
   overflow: hidden;
 `;
 
-const Hero = () => {
+const Hero = ({ scrollToLayer }) => {
   return (
     <section className="xs:p-4 sm-p-4 md:p-0">
-      <Navbar />
+      <Navbar scrollToLayer={scrollToLayer} />
       <div className="grid  sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:rid-cols-3 2xl:rid-cols-3 items-center ">
         {/* flex  left section*/}
         <div className="flex xs:mt-10 sm:mt-10 md:mt-0 md:col-span-2 lg:col-span-2 xl:col-span-2 2xl:col-span-2  items-center justify-center relative ">
@@ -93,11 +93,12 @@ const Hero = () => {
                 </button>
               </Link>
 
-              <a href={"#contact"} >
-                <button className="bg-primary-red py-2  px-4 text-lg mr-4 hover:text-primary-blue hover:-translate-y-0 hover:-translate-x-0.5 transition-all hover:shadow-glow">
-                  {"Let's Talk"}
-                </button>
-              </a>
+              <button
+                className="bg-primary-red py-2  px-4 text-lg mr-4 hover:text-primary-blue hover:-translate-y-0 hover:-translate-x-0.5 transition-all hover:shadow-glow"
+                onClick={() => scrollToLayer(6)}
+              >
+                {"Let's Talk"}
+              </button>
             </div>
           </div>
         </div>

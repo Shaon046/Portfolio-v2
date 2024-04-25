@@ -8,7 +8,7 @@ import Contacts from "./components/utilities/Contacts";
 import About from "./components/About";
 import Hero from "./components/Hero";
 import Certificates from "./components/utilities/Certificates";
-
+import { useRef } from "react";
 const Index = () => {
   //states
   const [lightOn, setLightOn] = useState(false);
@@ -103,13 +103,22 @@ const Index = () => {
     },
   ];
 
+  const ref = useRef();
+
+  const scrollToLayer = (layerIndex) => {
+    ref.current.scrollTo(layerIndex);
+  };
+
   return (
     <div style={{ background: "url(main.svg)" }}>
       <section className="min-h-screen ">
-        <Parallax pages={7}  >
+        <Parallax pages={7} ref={ref}>
           {/* Hero Section */}
+          {/* offset=zIndex
+        factor= pagesize */}
+
           <ParallaxLayer offset={0} speed={1}>
-            <Hero />
+            <Hero scrollToLayer={scrollToLayer} />
           </ParallaxLayer>
 
           {/* ABOUT */}
@@ -246,23 +255,15 @@ const Index = () => {
             offset={6}
             speed={1}
             id="contact"
-            className="relative " 
+            className="relative "
           >
-
-
-
-
             <Contacts />
-            
+
             <footer className="absolute w-full bottom-0 ">
               <Footer />
             </footer>
           </ParallaxLayer>
         </Parallax>
-
-
-
-        
       </section>
     </div>
   );
