@@ -15,7 +15,7 @@ const Contacts = () => {
   };
 
   const [formData, setFormData] = useState(formTemplate);
-  const [showSucessMessage, setShowSuccessMessage] = useState(false);
+  const [showSucessMessage, setShowSuccessMessage] = useState(true);
   const [isFormValid, setIsFormValid] = useState(true);
   const [emailFailed, setEmailFailed] = useState(false);
 
@@ -68,13 +68,13 @@ const Contacts = () => {
             open={true}
             sx={{ zIndex: (theme) => theme.zIndex.drawer + 1, color: "#fff" }}
           >
-            <div className="h-screen flex justify-center items-center">
+            <div className="h-screen w-full flex justify-center items-center">
               <Alert
                 severity="success"
                 sx={{
                   width: "max-content",
                   margin: "auto",
-                  height: "4rem",
+                  
                   textAlign: "center",
                   fontSize: "22px",
                   fontWeight: 700,
