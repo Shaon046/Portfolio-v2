@@ -15,7 +15,7 @@ const Contacts = () => {
   };
 
   const [formData, setFormData] = useState(formTemplate);
-  const [showSucessMessage, setShowSuccessMessage] = useState(true);
+  const [showSucessMessage, setShowSuccessMessage] = useState(false);
   const [isFormValid, setIsFormValid] = useState(true);
   const [emailFailed, setEmailFailed] = useState(false);
 
