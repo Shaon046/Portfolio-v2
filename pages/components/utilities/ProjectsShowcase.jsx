@@ -19,20 +19,15 @@ const ProjectShowcase = ({ image, project, viewLink, gitLink }) => {
         <p className="text-2xl text-bold font-semibold text-primary-blue">
           {project}
         </p>
-
       </div>
-      
-
-
-
 
       <div className="flex justify-evenly mt-4">
-        <Link href={viewLink ?? ""}>
+        <Link href={viewLink ?? ""}  target="_blank">
           <Button
             variant="contained"
             style={{
-              backgroundColor: "#162936", 
-              color: "#FBE094", 
+              backgroundColor: "#162936",
+              color: "#FBE094",
               display: "flex",
               alignItems: "center",
             }}
@@ -47,7 +42,7 @@ const ProjectShowcase = ({ image, project, viewLink, gitLink }) => {
             />{" "}
           </Button>
         </Link>
-        <Link href={gitLink ?? ''}>
+        <Link href={gitLink ?? ""}  target="_blank">
           <Button
             variant="contained"
             style={{
