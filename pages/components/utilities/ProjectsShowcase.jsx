@@ -19,7 +19,12 @@ const ProjectShowcase = ({ image, project, viewLink, gitLink }) => {
         <p className="text-2xl text-bold font-semibold text-primary-blue">
           {project}
         </p>
+
       </div>
+      
+
+
+
 
       <div className="flex justify-evenly mt-4">
         <Link href={viewLink ?? ""}>
