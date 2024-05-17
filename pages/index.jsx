@@ -67,9 +67,9 @@ const Index = () => {
   const projects = [
     {
       image: "project-1.png",
-      project: "Flipkart Clone",
-      viewLink: "https://flipkart-dev-sb.herokuapp.com/",
-      gitLink: "https://github.com/Shaon046",
+      project: "Comapany Website",
+      viewLink: "https://hbr.netlify.app/",
+      gitLink: "https://github.com/Shaon046/next_HBR",
     },
     {
       image: "project-2.png",
