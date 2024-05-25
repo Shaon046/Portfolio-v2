@@ -73,9 +73,9 @@ const Index = () => {
     },
     {
       image: "project-2.png",
-      project: "Expence Manager",
-      viewLink: "https://myexpences-tracker.netlify.app/",
-      gitLink: "https://github.com/Shaon046/ExpenseTracker-react-",
+      project: "Brunel",
+      viewLink: "https://bruneldemo.netlify.app/",
+      gitLink: "https://github.com/Shaon046/Brunel",
     },
     {
       image: "project-3.png",
@@ -97,9 +97,9 @@ const Index = () => {
     },
     {
       image: "project-6.png",
-      project: "PhotoBucket",
-      viewLink: "https://photo-buckets.netlify.app/",
-      gitLink: "https://github.com/Shaon046/Photo-Bucket",
+      project: "Xb-Med",
+      viewLink: "https://xetabots-shaon.netlify.app/",
+      gitLink: "https://github.com/Shaon046/XetaBots-Shaon",
     },
   ];
 
