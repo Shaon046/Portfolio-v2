@@ -67,7 +67,7 @@ const Index = () => {
   const projects = [
     {
       image: "project-1.png",
-      project: "Comapany Website",
+      project: "Company Website",
       viewLink: "https://hbr.netlify.app/",
       gitLink: "https://github.com/Shaon046/next_HBR",
     },
